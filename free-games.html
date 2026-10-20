@@ -1,0 +1,1507 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#030712">
+  <meta
+    name="description"
+    content="Explore the Free Games hub by JesusTyson33. Discover browser games, explore upcoming releases, and connect with us."
+  >
+
+  <title>Free Games | JesusTyson33</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <style>
+    :root {
+      --bg-deep: #030712;
+      --bg-navy: #06101f;
+      --panel: rgba(10, 22, 42, 0.78);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --cyan: #00c8ff;
+      --violet: #8b5cf6;
+      --magenta: #ec4899;
+      --success: #22c55e;
+      --border: rgba(148, 163, 184, 0.18);
+      --radius: 22px;
+      --content-width: 1180px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at 8% 8%,
+          rgba(0, 200, 255, 0.13),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 92% 18%,
+          rgba(139, 92, 246, 0.17),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 50% 85%,
+          rgba(236, 72, 153, 0.07),
+          transparent 32%
+        ),
+        var(--bg-deep);
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(
+          rgba(148, 163, 184, 0.08) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(148, 163, 184, 0.08) 1px,
+          transparent 1px
+        );
+      background-size: 46px 46px;
+      mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+      );
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button,
+    a,
+    input {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(
+        var(--content-width),
+        calc(100% - 40px)
+      );
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(3, 7, 18, 0.82);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      color: #fff;
+      background: linear-gradient(
+        135deg,
+        var(--cyan),
+        var(--violet)
+      );
+      box-shadow: 0 0 28px rgba(0, 200, 255, 0.2);
+    }
+
+    .brand-name {
+      display: block;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-caption {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav-link {
+      padding: 10px 13px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text);
+      background: rgba(0, 200, 255, 0.08);
+      border-color: rgba(0, 200, 255, 0.18);
+    }
+
+    .nav-link.active {
+      color: var(--cyan);
+    }
+
+    .home-link {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      border-radius: 13px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(
+        135deg,
+        var(--cyan),
+        var(--violet)
+      );
+      box-shadow: 0 8px 26px rgba(0, 200, 255, 0.15);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 12px 34px rgba(139, 92, 246, 0.3);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      padding: 92px 0 60px;
+      text-align: center;
+      isolation: isolate;
+    }
+
+    .hero-glow {
+      position: absolute;
+      z-index: -1;
+      width: 360px;
+      height: 360px;
+      left: 50%;
+      top: 25px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: rgba(0, 200, 255, 0.08);
+      filter: blur(90px);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border: 1px solid rgba(0, 200, 255, 0.22);
+      border-radius: 100px;
+      color: #a5eaff;
+      background: rgba(0, 200, 255, 0.07);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.7);
+      animation: pulse 2s infinite;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin: 26px auto 20px;
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -3px;
+      font-weight: 800;
+    }
+
+    .gradient-text {
+      color: transparent;
+      background: linear-gradient(
+        100deg,
+        var(--cyan),
+        #b5a1ff,
+        var(--magenta)
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(14px, 2vw, 17px);
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    /* SEARCH */
+
+    .search-section {
+      padding: 16px 0 58px;
+    }
+
+    .search-panel {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 25px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      background: linear-gradient(
+        145deg,
+        rgba(15, 30, 54, 0.92),
+        rgba(7, 14, 29, 0.94)
+      );
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+    }
+
+    .search-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--cyan),
+        var(--violet),
+        transparent
+      );
+      opacity: 0.85;
+    }
+
+    .search-heading {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .search-subtitle {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .search-form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px;
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      border-radius: 16px;
+      background: rgba(3, 7, 18, 0.7);
+      transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .search-form:focus-within {
+      border-color: var(--cyan);
+      box-shadow:
+        0 0 0 4px rgba(0, 200, 255, 0.08),
+        0 0 28px rgba(0, 200, 255, 0.08);
+    }
+
+    .search-icon {
+      padding-left: 11px;
+      color: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    .search-input {
+      width: 100%;
+      min-width: 0;
+      height: 44px;
+      border: 0;
+      outline: none;
+      color: var(--text);
+      background: transparent;
+      font-size: 14px;
+    }
+
+    .search-input::placeholder {
+      color: #8290a6;
+    }
+
+    .search-input:focus-visible {
+      outline: none;
+    }
+
+    .clear-btn {
+      display: none;
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      border: 0;
+      border-radius: 10px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.06);
+      cursor: pointer;
+    }
+
+    .clear-btn.visible {
+      display: grid;
+      place-items: center;
+    }
+
+    .search-btn {
+      min-height: 44px;
+      flex-shrink: 0;
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 11px;
+      color: #fff;
+      background: linear-gradient(
+        135deg,
+        var(--cyan),
+        var(--violet)
+      );
+      font-weight: 800;
+      font-size: 12px;
+      cursor: pointer;
+      transition: filter 0.2s ease;
+    }
+
+    .search-btn:hover {
+      filter: brightness(1.13);
+    }
+
+    .search-status {
+      min-height: 22px;
+      margin: 12px 2px 0;
+      color: #9baac0;
+      font-size: 12px;
+    }
+
+    .search-status.success {
+      color: #9fe9ff;
+    }
+
+    .search-status.error {
+      color: #fda4af;
+    }
+
+    .search-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 10px;
+      color: #8d9bb0;
+      font-size: 11px;
+    }
+
+    .search-note i {
+      margin-top: 3px;
+      color: var(--violet);
+    }
+
+    /* SECTION HEADERS */
+
+    .section {
+      padding: 48px 0 76px;
+    }
+
+    .section-heading {
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 10px;
+      font-size: clamp(26px, 4vw, 39px);
+      letter-spacing: -1.4px;
+    }
+
+    .section-heading p {
+      max-width: 580px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* FEATURE CARDS */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      position: relative;
+      min-width: 0;
+      padding: 25px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(
+        145deg,
+        rgba(15, 28, 50, 0.82),
+        rgba(7, 13, 26, 0.84)
+      );
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      top: -50px;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: rgba(0, 200, 255, 0.06);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(0, 200, 255, 0.4);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-icon {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(0, 200, 255, 0.18);
+      border-radius: 16px;
+      color: var(--cyan);
+      background: rgba(0, 200, 255, 0.08);
+      font-size: 21px;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 19px;
+      padding: 7px 10px;
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      border-radius: 100px;
+      color: #c4b5fd;
+      background: rgba(139, 92, 246, 0.08);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+    }
+
+    .status-badge .live-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--violet);
+      box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      padding: 12px 0 90px;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 30px;
+      padding: clamp(24px, 5vw, 45px);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: linear-gradient(
+        125deg,
+        rgba(10, 24, 44, 0.92),
+        rgba(7, 12, 26, 0.96)
+      );
+    }
+
+    .contact-copy h2 {
+      margin: 0 0 13px;
+      font-size: clamp(27px, 4vw, 38px);
+      letter-spacing: -1.4px;
+      line-height: 1.2;
+    }
+
+    .contact-copy > p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 13px;
+      align-content: center;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.025);
+      transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .contact-item:hover {
+      border-color: rgba(0, 200, 255, 0.32);
+      background: rgba(0, 200, 255, 0.045);
+    }
+
+    .contact-item-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 13px;
+      color: var(--cyan);
+      background: rgba(0, 200, 255, 0.09);
+      font-size: 19px;
+    }
+
+    .contact-item-icon.whatsapp {
+      color: #4ade80;
+      background: rgba(34, 197, 94, 0.1);
+    }
+
+    .contact-item-icon.instagram {
+      color: #f0abfc;
+      background: rgba(236, 72, 153, 0.1);
+    }
+
+    .contact-item small {
+      display: block;
+      color: #91a0b5;
+      font-size: 11px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-top: 2px;
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-item .arrow {
+      margin-left: auto;
+      color: #75849a;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      border-top: 1px solid var(--border);
+      background: rgba(3, 7, 18, 0.6);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      min-height: 88px;
+      padding-block: 20px;
+    }
+
+    .footer p {
+      margin: 0;
+      color: #8d9bb0;
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 12px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    /* BACK TO TOP */
+
+    .back-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      color: var(--cyan);
+      background: rgba(7, 16, 31, 0.9);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.6;
+        transform: scale(0.82);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .hero .eyebrow {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(
+          var(--content-width),
+          calc(100% - 28px)
+        );
+      }
+
+      .nav {
+        min-height: 68px;
+        gap: 10px;
+      }
+
+      .brand-icon {
+        width: 39px;
+        height: 39px;
+      }
+
+      .brand-name {
+        font-size: 14px;
+      }
+
+      .brand-caption {
+        font-size: 10px;
+      }
+
+      .nav-links {
+        gap: 5px;
+      }
+
+      .nav-link {
+        padding: 9px 10px;
+        font-size: 11px;
+      }
+
+      .nav-link.optional {
+        display: none;
+      }
+
+      .hero {
+        padding: 66px 0 38px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.8px;
+      }
+
+      .search-panel {
+        padding: 19px;
+        border-radius: 20px;
+      }
+
+      .search-section {
+        padding-bottom: 36px;
+      }
+
+      .search-form {
+        flex-wrap: wrap;
+      }
+
+      .search-input {
+        flex: 1;
+      }
+
+      .search-btn {
+        width: 100%;
+      }
+
+      .clear-btn {
+        margin-left: auto;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .feature-card {
+        padding: 22px;
+      }
+
+      .section {
+        padding: 38px 0 55px;
+      }
+
+      .contact-panel {
+        padding: 22px;
+        gap: 24px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .back-top {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-caption {
+        display: none;
+      }
+
+      .nav-link {
+        padding-inline: 8px;
+        font-size: 10px;
+      }
+
+      .brand-name {
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container nav">
+
+      <a class="brand" href="index.html" aria-label="JesusTyson33 homepage">
+        <span class="brand-icon">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+        </span>
+
+        <span>
+          <span class="brand-name">JesusTyson33</span>
+          <span class="brand-caption">AI CREATION STUDIO</span>
+        </span>
+      </a>
+
+      <nav class=nav-links" aria-label="Main navigation">
+
+        <a class="nav-link home-link" href="index.html">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          Home
+        </a>
+
+        <a class="nav-link optional" href="index.html#services">
+          Services
+        </a>
+
+        <a class="nav-link optional" href="index.html#contact">
+          Contact
+        </a>
+
+        <a
+          class="nav-link active"
+          href="free-games.html"
+          aria-current="page"
+        >
+          <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+          Free Games
+        </a>
+
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="container">
+
+        <div class="eyebrow">
+          <span class="live-dot" aria-hidden="true"></span>
+          THE FREE GAMES HUB
+        </div>
+
+        <h1>
+          PLAY. EXPLORE.<br>
+          <span class="gradient-text">HAVE FUN.</span>
+        </h1>
+
+        <p class="hero-description">
+          Welcome to the Free Games corner of JesusTyson33.
+          Explore our gaming hub, discover future additions,
+          and stay connected as the collection grows.
+        </p>
+
+        <div class="hero-actions">
+
+          <a class="btn btn-primary" href="#game-search">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            Explore the Hub
+          </a>
+
+          <a class="btn btn-secondary" href="#contact">
+            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+            Contact Us
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DUMMY SEARCH -->
+    <section class="search-section" id="game-search">
+      <div class="container">
+
+        <div class="search-panel reveal">
+
+          <h2 class="search-heading">
+            <i
+              class="fa-solid fa-compass"
+              style="color: var(--cyan);"
+              aria-hidden="true"
+            ></i>
+            Discover Something New
+          </h2>
+
+          <p class="search-subtitle">
+            Search the hub interface. Real game search will be
+            connected in a future update.
+          </p>
+
+          <form class="search-form" id="gameSearchForm" role="search">
+
+            <i
+              class="fa-solid fa-magnifying-glass search-icon"
+              aria-hidden="true"
+            ></i>
+
+            <input
+              class="search-input"
+              id="gameSearchInput"
+              type="search"
+              name="q"
+              placeholder="Search games, categories, or ideas..."
+              aria-label="Search games"
+              autocomplete="off"
+              maxlength="100"
+            >
+ <button
+              class="clear-btn"
+              id="clearSearch"
+              type="button"
+              aria-label="Clear search"
+              title="Clear search"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+
+            <button class="search-btn" type="submit">
+              <i class="fa-solid fa-search" aria-hidden="true"></i>
+              Search
+            </button>
+
+          </form>
+
+          <p
+            class="search-status"
+            id="searchStatus"
+            role="status"
+            aria-live="polite"
+          >
+            Search is currently a preview. No real game database is connected.
+          </p>
+
+          <div class="search-note">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            <span>
+              This is a demonstration search interface.
+              Entering a query will not search the internet or
+              retrieve real games.
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HUB FEATURES -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <h2>
+            Your Next <span class="gradient-text">Gaming Destination</span>
+          </h2>
+
+          <p>
+            A dedicated space for the gaming experiences and
+            features we plan to introduce.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+            </div>
+
+            <h3>Browser Games</h3>
+
+            <p>
+              A dedicated place for browser-based games.
+              Game links can be added here when they are ready.
+            </p>
+
+            <span class="status-badge">
+              <span class="live-dot" aria-hidden="true"></span>
+              COLLECTION COMING SOON
+            </span>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </div>
+
+            <h3>Smart Game Search</h3>
+
+            <p>
+              The search interface is ready for future integration
+              with game titles, tags, categories, and filters.
+            </p>
+
+            <span class="status-badge">
+              <span class="live-dot" aria-hidden="true"></span>
+              SEARCH PREVIEW
+            </span>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+            </div>
+
+            <h3>More Experiences</h3>
+
+            <p>
+              This section can grow with new projects, interactive
+              experiences, and original browser games.
+            </p>
+
+            <span class="status-badge">
+              <span class="live-dot" aria-hidden="true"></span>
+              FUTURE UPDATES
+            </span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+
+        <div class="contact-panel reveal">
+
+          <div class="contact-copy">
+
+            <div class="eyebrow">
+              <i class="fa-regular fa-comments" aria-hidden="true"></i>
+              LET'S CONNECT
+            </div>
+
+            <h2 style="margin-top: 22px;">
+              Have a question?<br>
+              <span class="gradient-text">Let's talk.</span>
+            </h2>
+
+            <p>
+              Need help, want to share feedback, or have an idea
+              for this hub? Reach out through our contact channels.
+            </p>
+
+            <div class="hero-actions" style="justify-content: flex-start;">
+
+              <a
+                class="btn btn-primary"
+                href="https://wa.me/919361800671"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                WhatsApp Us
+              </a>
+
+            </div>
+          </div>
+
+          <div class="contact-list">
+
+            <a
+              class="contact-item"
+              href="https://wa.me/919361800671"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact JesusTyson33 through WhatsApp"
+            >
+              <span class="contact-item-icon whatsapp">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              </span>
+
+              <span>
+                <small>WHATSAPP</small>
+                <strong>Chat with us</strong>
+              </span>
+
+              <i class="fa-solid fa-arrow-up-right-from-square arrow"
+                 aria-hidden="true"></i>
+            </a>
+
+            <a
+              class="contact-item"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Instagram"
+            >
+              <span class="contact-item-icon instagram">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </span>
+
+              <span>
+                <small>INSTAGRAM</small>
+                <strong>Visit Instagram</strong>
+              </span>
+
+              <i class="fa-solid fa-arrow-up-right-from-square arrow"
+                 aria-hidden="true"></i>
+            </a>
+
+            <div class="contact-item">
+              <span class="contact-item-icon">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+              </span>
+
+              <span>
+                <small>ENQUIRIES</small>
+                <strong>Response time may vary</strong>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <p>
+        © <span id="currentYear"></span>
+        JesusTyson33. All rights reserved.
+      </p>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#game-search">Search</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <button
+    class="back-top"
+    id="backTop"
+    type="button"
+    aria-label="Back to top"
+    title="Back to top"
+  >
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script>
+    "use strict";
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const searchForm = document.getElementById("gameSearchForm");
+      const searchInput = document.getElementById("gameSearchInput");
+      const clearButton = document.getElementById("clearSearch");
+      const searchStatus = document.getElementById("searchStatus");
+      const backTop = document.getElementById("backTop");
+      const currentYear = document.getElementById("currentYear");
+
+      currentYear.textContent = new Date().getFullYear();
+
+      /*
+       * DUMMY SEARCH
+       *
+       * This deliberately does not query a real database.
+       * Replace the submit handler with a real search implementation
+       * when the game catalogue is ready.
+       */
+
+      function updateClearButton() {
+        const hasValue = searchInput.value.length > 0;
+
+        clearButton.classList.toggle("visible", hasValue);
+      }
+
+      searchInput.addEventListener("input", () => {
+        updateClearButton();
+
+        const query = searchInput.value.trim();
+
+        if (!query) {
+          searchStatus.textContent =
+            "Search is currently a preview. No real game database is connected.";
+searchStatus.className = "search-status";
+          return;
+        }
+
+        searchStatus.textContent =
+          "Search preview: your query is ready. Real game results are not connected yet.";
+
+        searchStatus.className = "search-status";
+      });
+
+      searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const query = searchInput.value.trim();
+
+        if (!query) {
+          searchStatus.textContent =
+            "Enter a search term to try the preview.";
+
+          searchStatus.className = "search-status error";
+          searchInput.focus();
+          return;
+        }
+
+        searchStatus.textContent =
+          'Demo only: "' +
+          query +
+          '" was entered successfully. Real game search will be added in a future update.';
+
+        searchStatus.className = "search-status success";
+      });
+
+      clearButton.addEventListener("click", () => {
+        searchInput.value = "";
+        updateClearButton();
+
+        searchStatus.textContent =
+          "Search cleared. Enter a new search term to try the preview.";
+
+        searchStatus.className = "search-status";
+
+        searchInput.focus();
+      });
+
+      /*
+       * SCROLL REVEAL
+       *
+       * Uses IntersectionObserver when supported.
+       * Falls back to visible content if unavailable.
+       */
+
+      const revealElements = document.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.12
+          }
+        );
+
+        revealElements.forEach((element) => {
+          revealObserver.observe(element);
+        });
+      } else {
+        revealElements.forEach((element) => {
+          element.classList.add("visible");
+        });
+      }
+
+      /*
+       * BACK-TO-TOP BUTTON
+       */
+
+      function updateBackTop() {
+        backTop.classList.toggle(
+          "visible",
+          window.scrollY > 400
+        );
+      }
+
+      window.addEventListener("scroll", updateBackTop, {
+        passive: true
+      });
+
+      updateBackTop();
+
+      backTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches ? "auto" : "smooth"
+        });
+      });
+
+    });
+  </script>
+
+</body>
+</html>
